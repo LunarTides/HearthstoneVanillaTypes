@@ -1,6 +1,6 @@
 {
   "name": "@hearthstonejs/vanillatypes",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Hearthstone Card Types",
   "exports": "./types.ts",
   "type": "module",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LunarTides/Hearthstone.js.git"
+    "url": "git+https://github.com/LunarTides/HearthstoneVanillaTypes.git"
   },
   "keywords": [
     "types",
@@ -19,8 +19,7 @@
   "author": "LunarTides",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/LunarTides/Hearthstone.js/issues"
+    "url": "https://github.com/LunarTides/HearthstoneVanillaTypes/issues"
   },
-  "homepage": "https://github.com/LunarTides/Hearthstone.js#readme",
-  "main": "index.js"
+  "homepage": "https://github.com/LunarTides/HearthstoneVanillaTypes#readme"
 }

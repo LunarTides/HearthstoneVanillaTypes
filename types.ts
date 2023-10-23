@@ -1,4 +1,4 @@
-export type VanillaCardClass =
+export type CardClass =
 // 12410 Cards
 | 'NEUTRAL'
 // 1240 Cards
@@ -28,7 +28,7 @@ export type VanillaCardClass =
 // 2 Cards
 | 'WHIZBANG';
 
-export type VanillaCardRarity =
+export type CardRarity =
 // 2766 Cards
 | 'COMMON'
 // 2103 Cards
@@ -40,7 +40,7 @@ export type VanillaCardRarity =
 // 1009 Cards
 | 'FREE';
 
-export type VanillaCardSet =
+export type CardSet =
 // 7150 Cards
 | 'LETTUCE'
 // 2535 Cards
@@ -132,7 +132,7 @@ export type VanillaCardSet =
 // 34 Cards
 | 'DEMON_HUNTER_INITIATE';
 
-export type VanillaCardType =
+export type CardType =
 // 8497 Cards
 | 'MINION'
 // 5229 Cards
@@ -160,7 +160,7 @@ export type VanillaCardType =
 // 1 Card
 | 'BATTLEGROUNDS_HERO_BUDDY';
 
-export type VanillaSpellSchool =
+export type SpellSchool =
 // 710 Cards
 | 'SHADOW'
 // 687 Cards
@@ -178,7 +178,7 @@ export type VanillaSpellSchool =
 // 1 Card
 | 'PHYSICAL_COMBAT';
 
-export type VanillaReferenceTag =
+export type ReferenceTag =
 // 657 Cards
 | 'TAUNT'
 // 399 Cards
@@ -276,13 +276,13 @@ export type VanillaReferenceTag =
 // 1 Card
 | 'SPELLBURST';
 
-export type VanillaFaction =
+export type Faction =
 // 247 Cards
 | 'ALLIANCE'
 // 150 Cards
 | 'HORDE';
 
-export type VanillaMultiClass =
+export type MultiClassGroup =
 // 12 Cards
 | 'DRUID_SHAMAN'
 // 10 Cards
@@ -332,7 +332,7 @@ export type VanillaMultiClass =
 // 2 Cards
 | 'WARLOCK_MAGE';
 
-export type VanillaCardMechanic =
+export type Mechanic =
 // 2605 Cards
 | 'TRIGGER_VISUAL'
 // 2278 Cards
@@ -506,36 +506,36 @@ export type VanillaCardMechanic =
 | 'COUNTER';
 
 /**
- * Vanilla Hearthstone's card blueprint.
+ * Hearthstone's card blueprint.
  */
-export type VanillaCard = {
+export type Card = {
     id: string;
     dbfId: number;
     name: string;
     text?: string;
     flavor?: string;
     artist?: string;
-    cardClass?: VanillaCardClass;
+    cardClass?: CardClass;
     collectible?: boolean;
     cost?: number;
-    mechanics?: VanillaCardMechanic[];
-    rarity?: VanillaCardRarity;
-    set: VanillaCardSet;
-    race?: VanillaCardType;
-    races?: VanillaCardType[];
-    type: VanillaCardType;
-    spellSchool?: VanillaSpellSchool;
+    mechanics?: Mechanic[];
+    rarity?: CardRarity;
+    set: CardSet;
+    race?: CardType;
+    races?: CardType[];
+    type: CardType;
+    spellSchool?: SpellSchool;
     durability?: number;
-    faction?: VanillaFaction;
+    faction?: Faction;
     elite?: boolean;
     attack?: number;
     health?: number;
 
     howToEarn?: string;
-    // All props below this line was found by the vcpropfinder
-    classes?: VanillaCardClass[];
+    // All props below this line was found by a script (vcpropfinder)
+    classes?: CardClass[];
     heroPowerDbfId?: number;
-    referencesTags?: VanillaReferenceTag[];
+    referencesTags?: ReferenceTag[];
     targetingArrowText?: string;
     overload?: number;
     spellDamage?: number;
@@ -543,11 +543,11 @@ export type VanillaCard = {
     hasDiamondSkin?: boolean;
     howToEarnGolden?: string;
     armor?: number;
-    multiClassGroup?: VanillaMultiClass;
+    multiClassGroup?: MultiClassGroup;
     isMiniSet?: boolean;
     questReward?: string;
 
-    // Likely part of other gamemodes. Useless for this game
+    // Likely part of other gamemodes.
     mercenariesRole?: string;
     mercenariesAbilityCooldown?: number;
     techLevel?: number;
