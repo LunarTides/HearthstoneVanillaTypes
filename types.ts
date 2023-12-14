@@ -1,7 +1,7 @@
 // Last Updated: 14/12/2023
 // Tested with: https://hearthstonejson.com
 
-export type CardClass =
+export type Class =
 // 12799 Cards
 | 'NEUTRAL'
 // 1257 Cards
@@ -31,7 +31,7 @@ export type CardClass =
 // 2 Cards
 | 'WHIZBANG';
 
-export type CardRarity =
+export type Rarity =
 // 2825 Cards
 | 'COMMON'
 // 2156 Cards
@@ -43,7 +43,7 @@ export type CardRarity =
 // 1063 Cards
 | 'FREE';
 
-export type CardSet =
+export type Set =
 // 7150 Cards
 | 'LETTUCE'
 // 2801 Cards
@@ -139,7 +139,7 @@ export type CardSet =
 // 32 Cards
 | 'BASIC';
 
-export type CardType =
+export type Type =
 // 8798 Cards
 | 'MINION'
 // 5362 Cards
@@ -169,7 +169,7 @@ export type CardType =
 // 1 Card
 | 'BATTLEGROUNDS_HERO_BUDDY';
 
-export type CardTribe =
+export type Tribe =
 // 1026 Cards
 | 'BEAST'
 // 707 Cards
@@ -245,7 +245,7 @@ export type CardTribe =
 // 2 Cards
 | 'HIGHELF';
 
-export type CardRace = CardTribe;
+export type Race = Tribe;
 
 export type SpellSchool =
 // 714 Cards
@@ -266,108 +266,6 @@ export type SpellSchool =
 | 'TAVERN'
 // 1 Card
 | 'PHYSICAL_COMBAT';
-
-export type ReferenceTag =
-// 669 Cards
-| 'TAUNT'
-// 406 Cards
-| 'DEATHRATTLE'
-// 301 Cards
-| 'RUSH'
-// 296 Cards
-| 'BATTLECRY'
-// 267 Cards
-| 'DIVINE_SHIELD'
-// 187 Cards
-| 'IMMUNE'
-// 182 Cards
-| 'FREEZE'
-// 141 Cards
-| 'DISCOVER'
-// 130 Cards
-| 'SECRET'
-// 124 Cards
-| 'STEALTH'
-// 104 Cards
-| 'WINDFURY'
-// 82 Cards
-| 'SPELLPOWER'
-// 72 Cards
-| 'LIFESTEAL'
-// 69 Cards
-| 'POISONOUS'
-// 62 Cards
-| 'CHARGE'
-// 56 Cards
-| 'OVERLOAD'
-// 46 Cards
-| 'JADE_GOLEM'
-// 44 Cards
-| 'COMBO'
-// 43 Cards
-| 'REBORN'
-// 42 Cards
-| 'SILENCE'
-// 30 Cards
-| 'START_OF_GAME'
-// 22 Cards
-| 'ADAPT'
-// 22 Cards
-| 'OUTCAST'
-// 18 Cards
-| 'HONORABLEKILL'
-// 18 Cards
-| 'AUTOATTACK'
-// 17 Cards
-| 'RECRUIT'
-// 16 Cards
-| 'MAGNETIC'
-// 15 Cards
-| 'COUNTER'
-// 12 Cards
-| 'TRADEABLE'
-// 10 Cards
-| 'CHOOSE_ONE'
-// 9 Cards
-| 'SPARE_PART'
-// 8 Cards
-| 'FRENZY'
-// 8 Cards
-| 'EXCAVATE'
-// 7 Cards
-| 'VENOMOUS'
-// 6 Cards
-| 'QUEST'
-// 6 Cards
-| 'ENRAGED'
-// 4 Cards
-| 'AFFECTED_BY_SPELL_POWER'
-// 3 Cards
-| 'OVERHEAL'
-// 3 Cards
-| 'ECHO'
-// 3 Cards
-| 'CORRUPT'
-// 3 Cards
-| 'DREDGE'
-// 3 Cards
-| 'COLOSSAL'
-// 3 Cards
-| 'TITAN'
-// 3 Cards
-| 'QUICKDRAW'
-// 2 Cards
-| 'OVERKILL'
-// 2 Cards
-| 'FORGE'
-// 1 Card
-| 'AI_MUST_PLAY'
-// 1 Card
-| 'CANT_ATTACK'
-// 1 Card
-| 'INFUSE'
-// 1 Card
-| 'SPELLBURST';
 
 export type Faction =
 // 247 Cards
@@ -612,16 +510,16 @@ export type Card = {
     text?: string;
     flavor?: string;
     artist?: string;
-    cardClass?: CardClass;
+    cardClass?: Class;
     // Collectible is either set to true, or not set at all.
     collectible?: boolean;
     cost?: number;
     mechanics?: Mechanic[];
-    rarity?: CardRarity;
-    set: CardSet;
-    race?: CardTribe;
-    races?: CardTribe[];
-    type: CardType;
+    rarity?: Rarity;
+    set: Set;
+    race?: Tribe;
+    races?: Tribe[];
+    type: Type;
     spellSchool?: SpellSchool;
     durability?: number;
     faction?: Faction;
@@ -633,9 +531,9 @@ export type Card = {
 
     howToEarn?: string;
     // All props below this line was found by a script (vcpropfinder)
-    classes?: CardClass[];
+    classes?: Class[];
     heroPowerDbfId?: number;
-    referencesTags?: ReferenceTag[];
+    referencesTags?: Mechanic[];
     targetingArrowText?: string;
     overload?: number;
     spellDamage?: number;
