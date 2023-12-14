@@ -1,27 +1,30 @@
+// Last Updated: 14/12/2023
+// Tested with: https://hearthstonejson.com
+
 export type CardClass =
-// 12410 Cards
+// 12799 Cards
 | 'NEUTRAL'
-// 1240 Cards
+// 1257 Cards
 | 'DRUID'
-// 1138 Cards
+// 1172 Cards
 | 'WARRIOR'
-// 1065 Cards
-| 'WARLOCK'
-// 1059 Cards
-| 'ROGUE'
-// 1057 Cards
-| 'PALADIN'
-// 1055 Cards
+// 1098 Cards
 | 'MAGE'
-// 1036 Cards
+// 1096 Cards
+| 'PALADIN'
+// 1083 Cards
+| 'WARLOCK'
+// 1077 Cards
 | 'HUNTER'
-// 975 Cards
+// 1073 Cards
+| 'ROGUE'
+// 995 Cards
 | 'SHAMAN'
-// 905 Cards
+// 926 Cards
 | 'PRIEST'
-// 556 Cards
+// 585 Cards
 | 'DEMONHUNTER'
-// 355 Cards
+// 393 Cards
 | 'DEATHKNIGHT'
 // 11 Cards
 | 'DREAM'
@@ -29,23 +32,23 @@ export type CardClass =
 | 'WHIZBANG';
 
 export type CardRarity =
-// 2766 Cards
+// 2825 Cards
 | 'COMMON'
-// 2103 Cards
+// 2156 Cards
 | 'RARE'
-// 1492 Cards
-| 'EPIC'
-// 1342 Cards
+// 1567 Cards
 | 'LEGENDARY'
-// 1009 Cards
+// 1393 Cards
+| 'EPIC'
+// 1063 Cards
 | 'FREE';
 
 export type CardSet =
 // 7150 Cards
 | 'LETTUCE'
-// 2535 Cards
+// 2801 Cards
 | 'BATTLEGROUNDS'
-// 2225 Cards
+// 2230 Cards
 | 'TB'
 // 1079 Cards
 | 'THE_BARRENS'
@@ -61,13 +64,13 @@ export type CardSet =
 | 'DARKMOON_FAIRE'
 // 604 Cards
 | 'STORMWIND'
+// 581 Cards
+| 'HERO_SKINS'
 // 559 Cards
 | 'LOOTAPALOOZA'
-// 528 Cards
-| 'HERO_SKINS'
 // 519 Cards
 | 'GILNEAS'
-// 512 Cards
+// 515 Cards
 | 'TITANS'
 // 507 Cards
 | 'VANILLA'
@@ -77,9 +80,9 @@ export type CardSet =
 | 'EXPERT1'
 // 424 Cards
 | 'RETURN_OF_THE_LICH_KING'
-// 420 Cards
+// 421 Cards
 | 'SCHOLOMANCE'
-// 419 Cards
+// 421 Cards
 | 'BOOMSDAY'
 // 414 Cards
 | 'BLACK_TEMPLE'
@@ -89,19 +92,23 @@ export type CardSet =
 | 'CORE'
 // 347 Cards
 | 'BATTLE_OF_THE_BANDS'
+// 320 Cards
+| 'LEGACY'
 // 318 Cards
 | 'ICECROWN'
-// 313 Cards
-| 'LEGACY'
 // 284 Cards
 | 'YEAR_OF_THE_DRAGON'
+// 283
+| 'WILD_WEST'
 // 273 Cards
 | 'GANGS'
+// 265 Cards
+| 'CREDITS'
 // 262 Cards
 | 'LOE'
-// 246 Cards
+// 247 Cards
 | 'DRAGONS'
-// 234 Cards
+// 233 Cards
 | 'UNGORO'
 // 231 Cards
 | 'OG'
@@ -109,8 +116,6 @@ export type CardSet =
 | 'BRM'
 // 227 Cards
 | 'KARA'
-// 218 Cards
-| 'CREDITS'
 // 217 Cards
 | 'WONDERS'
 // 213 Cards
@@ -125,89 +130,173 @@ export type CardSet =
 | 'MISSIONS'
 // 60 Cards
 | 'PATH_OF_ARTHAS'
+// 59 Cards
+| 'TUTORIAL'
 // 49 Cards
 | 'TAVERNS_OF_TIME'
-// 36 Cards
-| 'BASIC'
 // 34 Cards
-| 'DEMON_HUNTER_INITIATE';
+| 'DEMON_HUNTER_INITIATE'
+// 32 Cards
+| 'BASIC';
 
 export type CardType =
-// 8497 Cards
+// 8798 Cards
 | 'MINION'
-// 5229 Cards
+// 5362 Cards
 | 'ENCHANTMENT'
-// 5227 Cards
+// 5337 Cards
 | 'SPELL'
 // 4438 Cards
 | 'LETTUCE_ABILITY'
-// 2186 Cards
+// 2263 Cards
 | 'HERO'
-// 1720 Cards
+// 1747 Cards
 | 'HERO_POWER'
-// 402 Cards
+// 407 Cards
 | 'WEAPON'
-// 55 Cards
-| 'BATTLEGROUNDS_QUEST_REWARD'
-// 51 Cards
+// 74 Cards
 | 'BATTLEGROUNDS_ANOMALY'
-// 35 Cards
+// 56 Cards
+| 'BATTLEGROUNDS_QUEST_REWARD'
+// 42 Cards
+| 'BATTLEGROUNDS_SPELL'
+// 37 Cards
 | 'LOCATION'
 // 9 Cards
 | 'GAME_MODE_BUTTON'
-// 3 Cards
+// 4 Cards
 | 'MOVE_MINION_HOVER_TARGET'
 // 1 Card
 | 'BATTLEGROUNDS_HERO_BUDDY';
 
+export type CardTribe =
+// 1026 Cards
+| 'BEAST'
+// 707 Cards
+| 'UNDEAD'
+// 493 Cards
+| 'ELEMENTAL'
+// 475 Cards
+| 'DEMON'
+// 452 Cards
+| 'MECHANICAL'
+// 449 Cards
+| 'DRAGON'
+// 268 Cards
+| 'MURLOC'
+// 208 Cards
+| 'NAGA'
+// 183 Cards
+| 'PIRATE'
+// 100 Cards
+| 'QUILBOAR'
+// 96 Cards
+| 'HUMAN'
+// 93 Cards
+| 'ORC'
+// 61 Cards
+| 'TOTEM'
+// 58 Cards
+| 'OLDGOD'
+// 46 Cards
+| 'ALL'
+// 36 Cards
+| 'NIGHTELF'
+// 32 Cards
+| 'TAUREN'
+// 31 Cards
+| 'TROLL'
+// 30 Cards
+| 'DWARF'
+// 22 Cards
+| 'GNOME'
+// 21 Cards
+| 'WORGEN'
+// 19 Cards
+| 'DRAENEI'
+// 18 Cards
+| 'OGRE'
+// 14 Cards
+| 'BLOODELF'
+// 9 Cards
+| 'FURBOLG'
+// 8 Cards
+| 'GOBLIN'
+// 8 Cards
+| 'TREANT'
+// 7 Cards
+| 'CENTAUR'
+// 7 Cards
+| 'PANDAREN'
+// 6 Cards
+| 'LOCK'
+// 6 Cards
+| 'GNOLL'
+// 5 Cards
+| 'GOLEM'
+// 3 Cards
+| 'VULPERA'
+// 3 Cards
+| 'GRONN'
+// 3 Cards
+| 'EGG'
+// 3 Cards
+| 'CELESTIAL'
+// 2 Cards
+| 'HIGHELF';
+
+export type CardRace = CardTribe;
+
 export type SpellSchool =
-// 710 Cards
+// 714 Cards
 | 'SHADOW'
-// 687 Cards
+// 691 Cards
 | 'NATURE'
-// 406 Cards
+// 409 Cards
 | 'FIRE'
-// 370 Cards
+// 374 Cards
 | 'HOLY'
-// 325 Cards
+// 326 Cards
 | 'ARCANE'
-// 273 Cards
+// 274 Cards
 | 'FROST'
-// 231 Cards
+// 235 Cards
 | 'FEL'
+// 42 Cards
+| 'TAVERN'
 // 1 Card
 | 'PHYSICAL_COMBAT';
 
 export type ReferenceTag =
-// 657 Cards
+// 669 Cards
 | 'TAUNT'
-// 399 Cards
+// 406 Cards
 | 'DEATHRATTLE'
-// 295 Cards
+// 301 Cards
 | 'RUSH'
-// 291 Cards
+// 296 Cards
 | 'BATTLECRY'
-// 265 Cards
+// 267 Cards
 | 'DIVINE_SHIELD'
-// 185 Cards
+// 187 Cards
 | 'IMMUNE'
-// 180 Cards
+// 182 Cards
 | 'FREEZE'
-// 129 Cards
-| 'SECRET'
-// 128 Cards
+// 141 Cards
 | 'DISCOVER'
-// 123 Cards
+// 130 Cards
+| 'SECRET'
+// 124 Cards
 | 'STEALTH'
-// 103 Cards
+// 104 Cards
 | 'WINDFURY'
 // 82 Cards
 | 'SPELLPOWER'
+// 72 Cards
+| 'LIFESTEAL'
 // 69 Cards
 | 'POISONOUS'
-// 67 Cards
-| 'LIFESTEAL'
-// 58 Cards
+// 62 Cards
 | 'CHARGE'
 // 56 Cards
 | 'OVERLOAD'
@@ -223,7 +312,7 @@ export type ReferenceTag =
 | 'START_OF_GAME'
 // 22 Cards
 | 'ADAPT'
-// 21 Cards
+// 22 Cards
 | 'OUTCAST'
 // 18 Cards
 | 'HONORABLEKILL'
@@ -231,24 +320,26 @@ export type ReferenceTag =
 | 'AUTOATTACK'
 // 17 Cards
 | 'RECRUIT'
-// 15 Cards
+// 16 Cards
 | 'MAGNETIC'
 // 15 Cards
 | 'COUNTER'
+// 12 Cards
+| 'TRADEABLE'
 // 10 Cards
 | 'CHOOSE_ONE'
 // 9 Cards
 | 'SPARE_PART'
-// 9 Cards
-| 'TRADEABLE'
 // 8 Cards
 | 'FRENZY'
+// 8 Cards
+| 'EXCAVATE'
+// 7 Cards
+| 'VENOMOUS'
 // 6 Cards
 | 'QUEST'
 // 6 Cards
 | 'ENRAGED'
-// 5 Cards
-| 'VENOMOUS'
 // 4 Cards
 | 'AFFECTED_BY_SPELL_POWER'
 // 3 Cards
@@ -261,10 +352,12 @@ export type ReferenceTag =
 | 'DREDGE'
 // 3 Cards
 | 'COLOSSAL'
+// 3 Cards
+| 'TITAN'
+// 3 Cards
+| 'QUICKDRAW'
 // 2 Cards
 | 'OVERKILL'
-// 2 Cards
-| 'TITAN'
 // 2 Cards
 | 'FORGE'
 // 1 Card
@@ -279,7 +372,7 @@ export type ReferenceTag =
 export type Faction =
 // 247 Cards
 | 'ALLIANCE'
-// 150 Cards
+// 151 Cards
 | 'HORDE';
 
 export type MultiClassGroup =
@@ -333,101 +426,101 @@ export type MultiClassGroup =
 | 'WARLOCK_MAGE';
 
 export type Mechanic =
-// 2605 Cards
+// 2691 Cards
 | 'TRIGGER_VISUAL'
-// 2278 Cards
+// 2351 Cards
 | 'BATTLECRY'
-// 1003 Cards
+// 1036 Cards
 | 'DEATHRATTLE'
-// 853 Cards
+// 887 Cards
 | 'TAUNT'
-// 406 Cards
+// 414 Cards
 | 'AURA'
-// 391 Cards
+// 411 Cards
+| 'RUSH'
+// 394 Cards
 | 'ENCHANTMENT_INVISIBLE'
 // 390 Cards
-| 'RUSH'
-// 366 Cards
 | 'DISCOVER'
-// 335 Cards
+// 343 Cards
 | 'TAG_ONE_TURN_EFFECT'
 // 228 Cards
 | 'DUNGEON_PASSIVE_BUFF'
 // 203 Cards
 | 'AI_MUST_PLAY'
-// 154 Cards
+// 163 Cards
 | 'DIVINE_SHIELD'
-// 154 Cards
+// 163 Cards
 | 'LIFESTEAL'
-// 145 Cards
+// 148 Cards
 | 'CHOOSE_ONE'
+// 135 Cards
+| 'SECRET'
 // 134 Cards
 | 'AFFECTED_BY_SPELL_POWER'
-// 133 Cards
-| 'SECRET'
-// 119 Cards
+// 125 Cards
 | 'STEALTH'
-// 119 Cards
+// 124 Cards
 // Idk why the capitalization is this way
 | 'ImmuneToSpellpower'
-// 118 Cards
+// 119 Cards
 | 'UNTOUCHABLE'
-// 103 Cards
+// 104 Cards
 | 'MAGNETIC'
-// 100 Cards
+// 101 Cards
 | 'COMBO'
-// 96 Cards
-| 'CANT_BE_SILENCED'
-// 94 Cards
+// 99 Cards
 | 'CHARGE'
+// 95 Cards
+| 'CANT_BE_SILENCED'
+// 92 Cards
+| 'WINDFURY'
 // 91 Cards
 | 'SPELLPOWER'
-// 88 Cards
-| 'WINDFURY'
-// 83 Cards
-| 'OVERLOAD'
-// 82 Cards
+// 87 Cards
 | 'POISONOUS'
-// 70 Cards
+// 85 Cards
+| 'OVERLOAD'
+// 77 Cards
 | 'REBORN'
-// 60 Cards
+// 62 Cards
 | 'InvisibleDeathrattle'
 // 59 Cards
-| 'START_OF_GAME'
-// 58 Cards
 | 'TOPDECK'
+// 59 Cards
+| 'START_OF_GAME'
+// 57 Cards
+| 'FREEZE'
 // 55 Cards
 | 'CANT_ATTACK'
-// 55 Cards
-| 'FREEZE'
+// 49 Cards
+| 'AVENGE'
 // 46 Cards
 | 'SPELLBURST'
 // 45 Cards
 | 'TWINSPELL'
 // 45 Cards
-| 'AVENGE'
-// 45 Cards
 | 'QUEST'
-// 39 Cards
+// 40 Cards
 | 'OUTCAST'
-// 37 Cards
-| 'CANT_BE_TARGETED_BY_SPELLS'
-// 37 Cards
-| 'CANT_BE_TARGETED_BY_HERO_POWERS'
-// 36 Cards
+// 39 Cards
 | 'TRADEABLE'
+// 36 Cards
+| 'CANT_BE_TARGETED_BY_SPELLS'
+// 36 Cards
+| 'CANT_BE_TARGETED_BY_HERO_POWERS'
 // 36 Cards
 | 'CORRUPT'
 // 34 Cards
 | 'DREDGE'
 // 33 Cards
 | 'OVERKILL'
+// 33 Cards
+| 'ENRAGED'
 // 31 Cards
 | 'INSPIRE'
 // 31 Cards
 | 'HONORABLEKILL'
-// 30 Cards
-| 'ENRAGED'
 // 29 Cards
 | 'INFUSE'
 // 27 Cards
@@ -446,12 +539,16 @@ export type Mechanic =
 | 'SILENCE'
 // 15 Cards
 | 'COLOSSAL'
+// 15 Cards
+| 'QUICKDRAW'
 // 14 Cards
 | 'PUZZLE'
 // 14 Cards
 | 'APPEAR_FUNCTIONALLY_DEAD'
 // 14 Cards
 | 'EVIL_GLOW'
+// 13 Cards
+| 'EXCAVATE'
 // 12 Cards
 | 'TITAN'
 // 11 Cards
@@ -460,7 +557,7 @@ export type Mechanic =
 | 'MULTIPLY_BUFF_VALUE'
 // 11 Cards
 | 'SPARE_PART'
-// 9 Cards
+// 10 Cards
 | 'OVERHEAL'
 // 9 Cards
 | 'IMMUNE'
@@ -516,17 +613,20 @@ export type Card = {
     flavor?: string;
     artist?: string;
     cardClass?: CardClass;
+    // Collectible is either set to true, or not set at all.
     collectible?: boolean;
     cost?: number;
     mechanics?: Mechanic[];
     rarity?: CardRarity;
     set: CardSet;
-    race?: CardType;
-    races?: CardType[];
+    race?: CardTribe;
+    races?: CardTribe[];
     type: CardType;
     spellSchool?: SpellSchool;
     durability?: number;
     faction?: Faction;
+    // I am not sure what this is, but it is either set to true, or not set at all.
+    // It might have something to do with legendaries. Maybe making sure that only 1 can be in a deck at a time.
     elite?: boolean;
     attack?: number;
     health?: number;
@@ -540,24 +640,32 @@ export type Card = {
     overload?: number;
     spellDamage?: number;
     collectionText?: string;
+    // Has Diamond Skin is either set to true, or not set at all.
     hasDiamondSkin?: boolean;
     howToEarnGolden?: string;
     armor?: number;
     multiClassGroup?: MultiClassGroup;
+    // Is mini set is either set to true, or not set at all.
     isMiniSet?: boolean;
+    // This seems like it is the id (not dbfId) of the reward card.
     questReward?: string;
 
     // Likely part of other gamemodes.
     mercenariesRole?: string;
     mercenariesAbilityCooldown?: number;
     techLevel?: number;
+    // Hide Cost is either set to true, or not set at all.
     hideCost?: boolean;
+    // Hide Stats is either set to true, or not set at all.
     hideStats?: boolean;
+    // Is battlegrounds pool minion is either set to true, or not set at all.
     isBattlegroundsPoolMinion?: boolean;
     battlegroundsPremiumDbfId?: number;
     battlegroundsNormalDbfId?: number;
     battlegroundsBuddyDbfId?: number;
+    // Battlegrounds hero is either set to true, or not set at all.
     battlegroundsHero?: boolean;
+    // Is battlegrounds buddy is either set to true, or not set at all.
     isBattlegroundsBuddy?: boolean;
     battlegroundsSkinParentId?: number;
     battlegroundsDarkmoonPrizeTurn?: number;
