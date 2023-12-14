@@ -4,4 +4,4 @@ cd Hearthstone.js
 npm i
 npx tsc
 npm run script:vanilla:generate-no-filter
-npm run script:vanilla:propfinder > ../generated2.txt
+npm run script:vanilla:propfinder > ../generated.txt
