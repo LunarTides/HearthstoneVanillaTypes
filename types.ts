@@ -1,4 +1,4 @@
-// Last Updated: 14/12/2023
+// Last Updated: 19/12/2023
 // Tested with: https://hearthstonejson.com
 
 export type Class =
@@ -323,6 +323,8 @@ export type MultiClassGroup =
 // 2 Cards
 | 'WARLOCK_MAGE';
 
+// Update 19/12/2023: Oh good! I just found out that all these are listed on: https://hearthstonejson.com/docs/cards.html#tags-and-referenced-tags
+// Good thing that i found these myself...
 export type Mechanic =
 // 2691 Cards
 | 'TRIGGER_VISUAL'
@@ -345,6 +347,7 @@ export type Mechanic =
 // 228 Cards
 | 'DUNGEON_PASSIVE_BUFF'
 // 203 Cards
+// "AI_MUST_PLAY is set on AI hero powers which are auto-cast." - hearthstonejson.com docs
 | 'AI_MUST_PLAY'
 // 163 Cards
 | 'DIVINE_SHIELD'
@@ -360,8 +363,10 @@ export type Mechanic =
 | 'STEALTH'
 // 124 Cards
 // Idk why the capitalization is this way
+// "ImmuneToSpellpower is set on cards which do not increase their damage with spell damage like other cards (such as Arcane Missiles)." - hearthstonejson.com docs
 | 'ImmuneToSpellpower'
 // 119 Cards
+// "UNTOUCHABLE is used by minions which “do not count as minions”." - hearthstonejson.com docs
 | 'UNTOUCHABLE'
 // 104 Cards
 | 'MAGNETIC'
@@ -382,8 +387,10 @@ export type Mechanic =
 // 77 Cards
 | 'REBORN'
 // 62 Cards
+// "InvisibleDeathrattle is an internal tag, used mostly in boss cards." - hearthstonejson.com docs
 | 'InvisibleDeathrattle'
 // 59 Cards
+// "TOPDECK is set on cards which are revealed to the opponent when drawn." - hearthstonejson.com docs
 | 'TOPDECK'
 // 59 Cards
 | 'START_OF_GAME'
@@ -444,6 +451,7 @@ export type Mechanic =
 // 14 Cards
 | 'APPEAR_FUNCTIONALLY_DEAD'
 // 14 Cards
+// "EVIL_GLOW is set on cards which glow red while in the hand." - hearthstonejson.com docs
 | 'EVIL_GLOW'
 // 13 Cards
 | 'EXCAVATE'
@@ -460,6 +468,7 @@ export type Mechanic =
 // 9 Cards
 | 'IMMUNE'
 // 7 Cards
+// "FORGETFUL corresponds to “50% chance to attack the wrong target”." - hearthstonejson.com docs
 | 'FORGETFUL'
 // 6 Cards
 | 'JADE_LOTUS'
@@ -492,13 +501,20 @@ export type Mechanic =
 // 2 Cards
 | 'CANT_BE_FATIGUED'
 // 2 Cards
+// "AUTOATTACK is a mechanic used in the Karazhan Chess scenario." - hearthstonejson.com docs
 | 'AUTOATTACK'
 // 1 Card, probably Genn Greymane
 | 'COLLECTIONMANAGER_FILTER_MANA_EVEN'
 // 1 Card, probably Baku the Mooneater
 | 'COLLECTIONMANAGER_FILTER_MANA_ODD'
 // 1 Card
-| 'COUNTER';
+// "COUNTER is… essentially just Counterspell." - hearthstonejson.com docs
+| 'COUNTER'
+// ? Cards, shown in the docs
+| 'ADAPT'
+// ? Cards, shown in the docs
+// "RITUAL corresponds to cards which buff C’Thun." - hearthstonejson.com docs
+| 'RITUAL';
 
 /**
  * Hearthstone's card blueprint.
