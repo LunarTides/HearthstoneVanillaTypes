@@ -1,52 +1,40 @@
-// Last Updated: 19/12/2023
+// Last Updated: 06/02/2024
 // Tested with: https://hearthstonejson.com
 
 export type Class =
-// 12799 Cards
+// 12824 Cards
 | 'NEUTRAL'
-// 1257 Cards
+// 1264 Cards
 | 'DRUID'
-// 1172 Cards
+// 1178 Cards
 | 'WARRIOR'
-// 1098 Cards
+// 1105 Cards
 | 'MAGE'
-// 1096 Cards
+// 1101 Cards
 | 'PALADIN'
-// 1083 Cards
+// 1086 Cards
 | 'WARLOCK'
-// 1077 Cards
+// 1081 Cards
 | 'HUNTER'
-// 1073 Cards
+// 1075 Cards
 | 'ROGUE'
-// 995 Cards
+// 1001 Cards
 | 'SHAMAN'
-// 926 Cards
+// 934 Cards
 | 'PRIEST'
-// 585 Cards
+// 591 Cards
 | 'DEMONHUNTER'
-// 393 Cards
+// 397 Cards
 | 'DEATHKNIGHT'
 // 11 Cards
 | 'DREAM'
 // 2 Cards
 | 'WHIZBANG';
 
-export type Rarity =
-// 2825 Cards
-| 'COMMON'
-// 2156 Cards
-| 'RARE'
-// 1567 Cards
-| 'LEGENDARY'
-// 1393 Cards
-| 'EPIC'
-// 1063 Cards
-| 'FREE';
-
 export type Set =
 // 7150 Cards
 | 'LETTUCE'
-// 2801 Cards
+// 2808 Cards
 | 'BATTLEGROUNDS'
 // 2230 Cards
 | 'TB'
@@ -64,7 +52,7 @@ export type Set =
 | 'DARKMOON_FAIRE'
 // 604 Cards
 | 'STORMWIND'
-// 581 Cards
+// 592 Cards
 | 'HERO_SKINS'
 // 559 Cards
 | 'LOOTAPALOOZA'
@@ -92,14 +80,14 @@ export type Set =
 | 'CORE'
 // 347 Cards
 | 'BATTLE_OF_THE_BANDS'
+// 347 Cards
+| 'WILD_WEST'
 // 320 Cards
 | 'LEGACY'
 // 318 Cards
 | 'ICECROWN'
 // 284 Cards
 | 'YEAR_OF_THE_DRAGON'
-// 283
-| 'WILD_WEST'
 // 273 Cards
 | 'GANGS'
 // 265 Cards
@@ -108,7 +96,7 @@ export type Set =
 | 'LOE'
 // 247 Cards
 | 'DRAGONS'
-// 233 Cards
+// 234 Cards
 | 'UNGORO'
 // 231 Cards
 | 'OG'
@@ -140,19 +128,19 @@ export type Set =
 | 'BASIC';
 
 export type Type =
-// 8798 Cards
+// 8825 Cards
 | 'MINION'
-// 5362 Cards
+// 5376 Cards
 | 'ENCHANTMENT'
-// 5337 Cards
+// 5359 Cards
 | 'SPELL'
 // 4438 Cards
 | 'LETTUCE_ABILITY'
-// 2263 Cards
+// 2276 Cards
 | 'HERO'
-// 1747 Cards
+// 1751 Cards
 | 'HERO_POWER'
-// 407 Cards
+// 409 Cards
 | 'WEAPON'
 // 74 Cards
 | 'BATTLEGROUNDS_ANOMALY'
@@ -160,7 +148,7 @@ export type Type =
 | 'BATTLEGROUNDS_QUEST_REWARD'
 // 42 Cards
 | 'BATTLEGROUNDS_SPELL'
-// 37 Cards
+// 38 Cards
 | 'LOCATION'
 // 9 Cards
 | 'GAME_MODE_BUTTON'
@@ -169,103 +157,17 @@ export type Type =
 // 1 Card
 | 'BATTLEGROUNDS_HERO_BUDDY';
 
-export type Tribe =
-// 1026 Cards
-| 'BEAST'
-// 707 Cards
-| 'UNDEAD'
-// 493 Cards
-| 'ELEMENTAL'
-// 475 Cards
-| 'DEMON'
-// 452 Cards
-| 'MECHANICAL'
-// 449 Cards
-| 'DRAGON'
-// 268 Cards
-| 'MURLOC'
-// 208 Cards
-| 'NAGA'
-// 183 Cards
-| 'PIRATE'
-// 100 Cards
-| 'QUILBOAR'
-// 96 Cards
-| 'HUMAN'
-// 93 Cards
-| 'ORC'
-// 61 Cards
-| 'TOTEM'
-// 58 Cards
-| 'OLDGOD'
-// 46 Cards
-| 'ALL'
-// 36 Cards
-| 'NIGHTELF'
-// 32 Cards
-| 'TAUREN'
-// 31 Cards
-| 'TROLL'
-// 30 Cards
-| 'DWARF'
-// 22 Cards
-| 'GNOME'
-// 21 Cards
-| 'WORGEN'
-// 19 Cards
-| 'DRAENEI'
-// 18 Cards
-| 'OGRE'
-// 14 Cards
-| 'BLOODELF'
-// 9 Cards
-| 'FURBOLG'
-// 8 Cards
-| 'GOBLIN'
-// 8 Cards
-| 'TREANT'
-// 7 Cards
-| 'CENTAUR'
-// 7 Cards
-| 'PANDAREN'
-// 6 Cards
-| 'LOCK'
-// 6 Cards
-| 'GNOLL'
-// 5 Cards
-| 'GOLEM'
-// 3 Cards
-| 'VULPERA'
-// 3 Cards
-| 'GRONN'
-// 3 Cards
-| 'EGG'
-// 3 Cards
-| 'CELESTIAL'
-// 2 Cards
-| 'HIGHELF';
-
-export type Race = Tribe;
-
-export type SpellSchool =
-// 714 Cards
-| 'SHADOW'
-// 691 Cards
-| 'NATURE'
-// 409 Cards
-| 'FIRE'
-// 374 Cards
-| 'HOLY'
-// 326 Cards
-| 'ARCANE'
-// 274 Cards
-| 'FROST'
-// 235 Cards
-| 'FEL'
-// 42 Cards
-| 'TAVERN'
-// 1 Card
-| 'PHYSICAL_COMBAT';
+export type Rarity =
+// 2843 Cards
+| 'COMMON'
+// 2177 Cards
+| 'RARE'
+// 1573 Cards
+| 'LEGENDARY'
+// 1400 Cards
+| 'EPIC'
+// 1071 Cards
+| 'FREE';
 
 export type Faction =
 // 247 Cards
@@ -273,93 +175,63 @@ export type Faction =
 // 151 Cards
 | 'HORDE';
 
-export type MultiClassGroup =
-// 12 Cards
-| 'DRUID_SHAMAN'
-// 10 Cards
-| 'WARLOCK_DEMONHUNTER'
-// 9 Cards
-| 'HUNTER_DEMONHUNTER'
-// 9 Cards
-| 'PRIEST_WARLOCK'
-// 9 Cards
-| 'MAGE_SHAMAN'
-// 9 Cards
-| 'DRUID_HUNTER'
-// 8 Cards
-| 'MAGE_ROGUE'
-// 8 Cards
-| 'PALADIN_WARRIOR'
-// 7 Cards
-| 'ROGUE_WARRIOR'
-// 6 Cards
-| 'JADE_LOTUS'
-// 5 Cards
-| 'GRIMY_GOONS'
-// 5 Cards
-| 'PALADIN_PRIEST'
-// 4 Cards
-| 'KABAL'
-// 4 Cards
-| 'PRIEST_DRUID'
-// 2 Cards
-| 'MAGE_HUNTER'
-// 2 Cards
-| 'HUNTER_DEATHKNIGHT'
-// 2 Cards
-| 'DEATHKNIGHT_PALADIN'
-// 2 Cards
-| 'PALADIN_SHAMAN'
-// 2 Cards
-| 'SHAMAN_WARRIOR'
-// 2 Cards
-| 'WARRIOR_DEMONHUNTER'
-// 2 Cards
-| 'DEMONHUNTER_ROGUE'
-// 2 Cards
-| 'ROGUE_PRIEST'
-// 2 Cards
-| 'DRUID_WARLOCK'
-// 2 Cards
-| 'WARLOCK_MAGE';
+export type SpellSchool =
+// 715 Cards
+| 'SHADOW'
+// 694 Cards
+| 'NATURE'
+// 410 Cards
+| 'FIRE'
+// 374 Cards
+| 'HOLY'
+// 327 Cards
+| 'ARCANE'
+// 275 Cards
+| 'FROST'
+// 238 Cards
+| 'FEL'
+// 42 Cards
+| 'TAVERN'
+// 1 Card
+| 'PHYSICAL_COMBAT';
 
 // Update 19/12/2023: Oh good! I just found out that all these are listed on: https://hearthstonejson.com/docs/cards.html#tags-and-referenced-tags
 // Good thing that i found these myself...
 export type Mechanic =
-// 2691 Cards
+// 2696 Cards
 | 'TRIGGER_VISUAL'
-// 2351 Cards
+// 2361 Cards
 | 'BATTLECRY'
-// 1036 Cards
+// 1041 Cards
 | 'DEATHRATTLE'
-// 887 Cards
+// 895 Cards
 | 'TAUNT'
-// 414 Cards
+// 415 Cards
 | 'AURA'
-// 411 Cards
+// 412 Cards
 | 'RUSH'
 // 394 Cards
-| 'ENCHANTMENT_INVISIBLE'
-// 390 Cards
 | 'DISCOVER'
-// 343 Cards
+// 394 Cards
+| 'ENCHANTMENT_INVISIBLE'
+// 344 Cards
 | 'TAG_ONE_TURN_EFFECT'
 // 228 Cards
 | 'DUNGEON_PASSIVE_BUFF'
 // 203 Cards
 // "AI_MUST_PLAY is set on AI hero powers which are auto-cast." - hearthstonejson.com docs
 | 'AI_MUST_PLAY'
-// 163 Cards
-| 'DIVINE_SHIELD'
-// 163 Cards
+// 167 Cards
 | 'LIFESTEAL'
-// 148 Cards
+// 166 Cards
+| 'DIVINE_SHIELD'
+// 149 Cards
 | 'CHOOSE_ONE'
-// 135 Cards
+// 136 Cards
 | 'SECRET'
 // 134 Cards
 | 'AFFECTED_BY_SPELL_POWER'
-// 125 Cards
+// 126 Cards
 | 'STEALTH'
 // 124 Cards
 // Idk why the capitalization is this way
@@ -368,7 +240,7 @@ export type Mechanic =
 // 119 Cards
 // "UNTOUCHABLE is used by minions which “do not count as minions”." - hearthstonejson.com docs
 | 'UNTOUCHABLE'
-// 104 Cards
+// 106 Cards
 | 'MAGNETIC'
 // 101 Cards
 | 'COMBO'
@@ -377,14 +249,14 @@ export type Mechanic =
 // 95 Cards
 | 'CANT_BE_SILENCED'
 // 92 Cards
-| 'WINDFURY'
-// 91 Cards
 | 'SPELLPOWER'
+// 92 Cards
+| 'WINDFURY'
 // 87 Cards
 | 'POISONOUS'
 // 85 Cards
 | 'OVERLOAD'
-// 77 Cards
+// 78 Cards
 | 'REBORN'
 // 62 Cards
 // "InvisibleDeathrattle is an internal tag, used mostly in boss cards." - hearthstonejson.com docs
@@ -393,9 +265,10 @@ export type Mechanic =
 // "TOPDECK is set on cards which are revealed to the opponent when drawn." - hearthstonejson.com docs
 | 'TOPDECK'
 // 59 Cards
-| 'START_OF_GAME'
-// 57 Cards
 | 'FREEZE'
+// 59 Cards
+// UPDATE 4.0.0: For some reason, this has been renamed? Renamed from 'START_OF_GAME'
+| 'START_OF_GAME_KEYWORD'
 // 55 Cards
 | 'CANT_ATTACK'
 // 49 Cards
@@ -410,9 +283,9 @@ export type Mechanic =
 | 'OUTCAST'
 // 39 Cards
 | 'TRADEABLE'
-// 36 Cards
+// 37 Cards
 | 'CANT_BE_TARGETED_BY_SPELLS'
-// 36 Cards
+// 37 Cards
 | 'CANT_BE_TARGETED_BY_HERO_POWERS'
 // 36 Cards
 | 'CORRUPT'
@@ -425,7 +298,8 @@ export type Mechanic =
 // 31 Cards
 | 'INSPIRE'
 // 31 Cards
-| 'HONORABLEKILL'
+// UPDATE 4.0.0: For some reason, this has been renamed? Renamed from 'HONORABLEKILL'
+| 'HONORABLE_KILL'
 // 29 Cards
 | 'INFUSE'
 // 27 Cards
@@ -433,19 +307,21 @@ export type Mechanic =
 // 23 Cards
 | 'ECHO'
 // 21 Cards
-| 'MANATHIRST'
-// 19 Cards
 | 'FORGE'
+// 21 Cards
+| 'MANATHIRST'
 // 18 Cards
 | 'VENOMOUS'
 // 17 Cards
 | 'ADJACENT_BUFF'
 // 17 Cards
+| 'EXCAVATE'
+// 17 Cards
 | 'SILENCE'
+// 16 Cards
+| 'QUICKDRAW'
 // 15 Cards
 | 'COLOSSAL'
-// 15 Cards
-| 'QUICKDRAW'
 // 14 Cards
 | 'PUZZLE'
 // 14 Cards
@@ -453,12 +329,11 @@ export type Mechanic =
 // 14 Cards
 // "EVIL_GLOW is set on cards which glow red while in the hand." - hearthstonejson.com docs
 | 'EVIL_GLOW'
-// 13 Cards
-| 'EXCAVATE'
 // 12 Cards
 | 'TITAN'
 // 11 Cards
-| 'SIDEQUEST'
+// UPDATE 4.0.0: For some reason, this has been renamed? Renamed from 'SIDEQUEST'
+| 'SIDE_QUEST'
 // 11 Cards
 | 'MULTIPLY_BUFF_VALUE'
 // 11 Cards
@@ -515,6 +390,134 @@ export type Mechanic =
 // ? Cards, shown in the docs
 // "RITUAL corresponds to cards which buff C’Thun." - hearthstonejson.com docs
 | 'RITUAL';
+
+export type Race = Tribe;
+
+export type Tribe =
+// 1027 Cards
+| 'BEAST'
+// 707 Cards
+| 'UNDEAD'
+// 512 Cards
+| 'ELEMENTAL'
+// 475 Cards
+| 'DEMON'
+// 453 Cards
+| 'MECHANICAL'
+// 450 Cards
+| 'DRAGON'
+// 269 Cards
+| 'MURLOC'
+// 208 Cards
+| 'NAGA'
+// 183 Cards
+| 'PIRATE'
+// 100 Cards
+| 'QUILBOAR'
+// 96 Cards
+| 'HUMAN'
+// 93 Cards
+| 'ORC'
+// 62 Cards
+| 'TOTEM'
+// 58 Cards
+| 'OLDGOD'
+// 46 Cards
+| 'ALL'
+// 36 Cards
+| 'NIGHTELF'
+// 32 Cards
+| 'TAUREN'
+// 31 Cards
+| 'TROLL'
+// 30 Cards
+| 'DWARF'
+// 22 Cards
+| 'GNOME'
+// 21 Cards
+| 'WORGEN'
+// 19 Cards
+| 'DRAENEI'
+// 18 Cards
+| 'OGRE'
+// 14 Cards
+| 'BLOODELF'
+// 9 Cards
+| 'FURBOLG'
+// 8 Cards
+| 'GOBLIN'
+// 8 Cards
+| 'TREANT'
+// 7 Cards
+| 'CENTAUR'
+// 7 Cards
+| 'PANDAREN'
+// 6 Cards
+| 'LOCK'
+// 6 Cards
+| 'GNOLL'
+// 5 Cards
+| 'GOLEM'
+// 3 Cards
+| 'VULPERA'
+// 3 Cards
+| 'GRONN'
+// 3 Cards
+| 'EGG'
+// 3 Cards
+| 'CELESTIAL'
+// 2 Cards
+| 'HIGHELF';
+
+export type MultiClassGroup =
+// 12 Cards
+| 'DRUID_SHAMAN'
+// 10 Cards
+| 'WARLOCK_DEMONHUNTER'
+// 9 Cards
+| 'HUNTER_DEMONHUNTER'
+// 9 Cards
+| 'PRIEST_WARLOCK'
+// 9 Cards
+| 'MAGE_SHAMAN'
+// 9 Cards
+| 'DRUID_HUNTER'
+// 8 Cards
+| 'MAGE_ROGUE'
+// 8 Cards
+| 'PALADIN_WARRIOR'
+// 7 Cards
+| 'MAGE_HUNTER'
+// 7 Cards
+| 'DRUID_WARLOCK'
+// 7 Cards
+| 'ROGUE_WARRIOR'
+// 6 Cards
+| 'JADE_LOTUS'
+// 6 Cards
+| 'PRIEST_DRUID'
+// 5 Cards
+| 'GRIMY_GOONS'
+// 5 Cards
+| 'PALADIN_PRIEST'
+// 4 Cards
+| 'KABAL'
+// 4 Cards
+| 'HUNTER_DEATHKNIGHT'
+// 4 Cards
+| 'PALADIN_SHAMAN'
+// 4 Cards
+| 'SHAMAN_WARRIOR'
+// 4 Cards
+| 'WARRIOR_DEMONHUNTER'
+// 4 Cards
+| 'DEMONHUNTER_ROGUE'
+// 4 Cards
+| 'DEATHKNIGHT_PALADIN'
+// 4 Cards
+| 'ROGUE_PRIEST'
+// 4 Cards
+| 'WARLOCK_MAGE';
 
 /**
  * Hearthstone's card blueprint.
