@@ -3,4 +3,4 @@ cd ./Hearthstone.js
 
 bun install
 bun run script:vanilla:generate-no-filter
-bun run script:vanilla:propfinder > ../generated.txt
+bun run script:vanilla:propfinder > ../types.ts
