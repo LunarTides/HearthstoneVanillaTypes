@@ -1,0 +1,28 @@
+name: Open PR
+
+on:
+  schedule:
+    - cron: 0 0 1 */3 *
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: oven-sh/setup-bun@v1
+
+      - run: git checkout -b @gha/$(date +"%d-%m-%y")
+
+      - name: Generate types.ts file
+        run: ./generate.sh
+
+      - run: npm version minor
+      
+      - name: Create PR
+        run: gh pr create --label automated --title "Update $(date +'%d/%m/%y')" --body "" > pr-number.txt
+      
+      # Isolate PR number from URL.
+      - run: grep -Po '\d$' pr-number.txt > pr-number.txt
+
+      - name: Close outdated PRs
+        run: gh pr list --label automated | gh pr close -c "Superseded by #$(cat pr-number.txt)"
