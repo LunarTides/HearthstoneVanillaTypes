@@ -1,4 +1,4 @@
-// Last Updated: 03/06/2024 (DD/MM/YYYY)
+// Last Updated: 09/06/2024 (DD/MM/YYYY)
 // Tested with: https://hearthstonejson.com
 
 export type CardClass =
