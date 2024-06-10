@@ -19,10 +19,9 @@ jobs:
       - run: npm version minor
       
       - name: Create PR
-        run: gh pr create --label automated --title "Update $(date +'%d/%m/%y')" --body "" > pr-number.txt
-      
-      # Isolate PR number from URL.
-      - run: grep -Po '\d$' pr-number.txt > pr-number.txt
+        run: gh pr create --label automated --draft --title "Update $(date +'%d/%m/%y')" --body "" > pr-number.txt
 
       - name: Close outdated PRs
-        run: gh pr list --label automated | gh pr close -c "Superseded by #$(cat pr-number.txt)"
+        run: gh pr list --label automated --draft=false --json number --jq '.[].number' | xargs gh pr close -d -c "Superseded by #$(cat pr-number.txt)" "{}"
+
+      - run: gh pr ready $(cat pr-number.txt)
