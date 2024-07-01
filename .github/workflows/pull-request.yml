@@ -16,7 +16,7 @@ jobs:
       - name: Generate types.ts file
         run: ./generate.sh
 
-      - run: npm version minor
+      - run: npm version minor -f
       
       - name: Create PR
         run: gh pr create --label automated --draft --title "Update $(date +'%d/%m/%y')" --body "" > pr-number.txt
