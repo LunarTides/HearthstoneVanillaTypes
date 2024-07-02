@@ -1,30 +1,30 @@
-// Last Updated: 09/06/2024 (DD/MM/YYYY)
+// Last Updated: 02/07/2024 (DD/MM/YYYY)
 // Tested with: https://hearthstonejson.com
 
 export type CardClass =
-// 13373 Cards
+// 13446 Cards
 | 'NEUTRAL'
-// 1329 Cards
+// 1332 Cards
 | 'DRUID'
-// 1214 Cards
+// 1220 Cards
 | 'WARRIOR'
-// 1157 Cards
+// 1159 Cards
 | 'MAGE'
-// 1150 Cards
+// 1156 Cards
 | 'PALADIN'
-// 1143 Cards
+// 1152 Cards
 | 'WARLOCK'
-// 1138 Cards
+// 1141 Cards
 | 'HUNTER'
-// 1119 Cards
+// 1128 Cards
 | 'ROGUE'
-// 1047 Cards
+// 1050 Cards
 | 'SHAMAN'
-// 986 Cards
+// 991 Cards
 | 'PRIEST'
-// 650 Cards
+// 659 Cards
 | 'DEMONHUNTER'
-// 487 Cards
+// 488 Cards
 | 'DEATHKNIGHT'
 // 11 Cards
 | 'DREAM'
@@ -34,9 +34,9 @@ export type CardClass =
 export type Set =
 // 7151 Cards
 | 'LETTUCE'
-// 3152 Cards
+// 3223 Cards
 | 'BATTLEGROUNDS'
-// 2439 Cards
+// 2460 Cards
 | 'TB'
 // 1079 Cards
 | 'THE_BARRENS'
@@ -46,10 +46,10 @@ export type Set =
 | 'DALARAN'
 // 808 Cards
 | 'ULDUM'
-// 665 Cards
-| 'ALTERAC_VALLEY'
-// 652 Cards
+// 677 Cards
 | 'HERO_SKINS'
+// 667 Cards
+| 'ALTERAC_VALLEY'
 // 641 Cards
 | 'DARKMOON_FAIRE'
 // 604 Cards
@@ -68,15 +68,15 @@ export type Set =
 | 'EXPERT1'
 // 425 Cards
 | 'RETURN_OF_THE_LICH_KING'
+// 423 Cards
+| 'BOOMSDAY'
 // 422 Cards
 | 'SCHOLOMANCE'
-// 421 Cards
-| 'BOOMSDAY'
 // 421 Cards
 | 'BLACK_TEMPLE'
 // 396 Cards
 | 'REVENDRETH'
-// 372 Cards
+// 374 Cards
 | 'CORE'
 // 371 Cards
 | 'WHIZBANGS_WORKSHOP'
@@ -126,23 +126,25 @@ export type Set =
 | 'TAVERNS_OF_TIME'
 // 40 Cards
 | 'DEMON_HUNTER_INITIATE'
-// 33 Cards
+// 34 Cards
 | 'BASIC'
 // 21 Cards
-| 'EVENT';
+| 'EVENT'
+// 5 Cards
+| 'ISLAND_VACATION';
 
 export type Type =
-// 9232 Cards
+// 9285 Cards
 | 'MINION'
-// 5625 Cards
+// 5648 Cards
 | 'ENCHANTMENT'
-// 5593 Cards
+// 5603 Cards
 | 'SPELL'
 // 4438 Cards
 | 'LETTUCE_ABILITY'
-// 2414 Cards
+// 2433 Cards
 | 'HERO'
-// 1830 Cards
+// 1854 Cards
 | 'HERO_POWER'
 // 428 Cards
 | 'WEAPON'
@@ -166,11 +168,11 @@ export type Rarity =
 | 'COMMON'
 // 2323 Cards
 | 'RARE'
-// 1650 Cards
+// 1654 Cards
 | 'LEGENDARY'
-// 1474 Cards
+// 1483 Cards
 | 'EPIC'
-// 1132 Cards
+// 1146 Cards
 | 'FREE';
 
 export type Faction =
@@ -182,7 +184,7 @@ export type Faction =
 export type SpellSchool =
 // 735 Cards
 | 'SHADOW'
-// 702 Cards
+// 703 Cards
 | 'NATURE'
 // 412 Cards
 | 'FIRE'
@@ -202,27 +204,27 @@ export type SpellSchool =
 | 'PHYSICAL_COMBAT';
 
 export type Mechanics =
-// 2858 Cards
+// 2895 Cards
 | 'TRIGGER_VISUAL'
-// 2488 Cards
+// 2494 Cards
 | 'BATTLECRY'
-// 1103 Cards
+// 1111 Cards
 | 'DEATHRATTLE'
-// 940 Cards
+// 943 Cards
 | 'TAUNT'
-// 447 Cards
-| 'DISCOVER'
-// 436 Cards
+// 444 Cards
 | 'AURA'
+// 442 Cards
+| 'DISCOVER'
 // 434 Cards
 | 'RUSH'
 // 399 Cards
 | 'ENCHANTMENT_INVISIBLE'
-// 358 Cards
+// 359 Cards
 | 'TAG_ONE_TURN_EFFECT'
 // 228 Cards
 | 'DUNGEON_PASSIVE_BUFF'
-// 204 Cards
+// 203 Cards
 | 'AI_MUST_PLAY'
 // 184 Cards
 | 'LIFESTEAL'
@@ -240,7 +242,7 @@ export type Mechanics =
 | 'ImmuneToSpellpower'
 // 119 Cards
 | 'UNTOUCHABLE'
-// 109 Cards
+// 110 Cards
 | 'MAGNETIC'
 // 105 Cards
 | 'COMBO'
@@ -264,7 +266,7 @@ export type Mechanics =
 | 'FREEZE'
 // 58 Cards
 | 'AVENGE'
-// 56 Cards
+// 58 Cards
 | 'START_OF_GAME_KEYWORD'
 // 55 Cards
 | 'CANT_ATTACK'
@@ -363,6 +365,10 @@ export type Mechanics =
 // 3 Cards
 | 'GHOSTLY'
 // 2 Cards
+| 'COLLECTIONMANAGER_FILTER_MANA_EVEN'
+// 2 Cards
+| 'COLLECTIONMANAGER_FILTER_MANA_ODD'
+// 2 Cards
 | 'SUMMONED'
 // 2 Cards
 | 'CANT_BE_FATIGUED'
@@ -371,10 +377,6 @@ export type Mechanics =
 // 1 Cards
 | 'FINISH_ATTACK_SPELL_ON_DAMAGE'
 // 1 Cards
-| 'COLLECTIONMANAGER_FILTER_MANA_EVEN'
-// 1 Cards
-| 'COLLECTIONMANAGER_FILTER_MANA_ODD'
-// 1 Cards
 | 'CANT_BE_TARGETED_BY_SPELLS'
 // 1 Cards
 | 'CANT_BE_TARGETED_BY_HERO_POWERS'
@@ -382,27 +384,27 @@ export type Mechanics =
 | 'COUNTER';
 
 export type Race =
-// 1076 Cards
+// 1083 Cards
 | 'BEAST'
-// 743 Cards
+// 747 Cards
 | 'UNDEAD'
-// 538 Cards
+// 540 Cards
 | 'ELEMENTAL'
-// 500 Cards
+// 505 Cards
 | 'DEMON'
-// 499 Cards
+// 503 Cards
 | 'MECHANICAL'
-// 485 Cards
+// 489 Cards
 | 'DRAGON'
-// 280 Cards
+// 284 Cards
 | 'MURLOC'
 // 224 Cards
 | 'NAGA'
-// 201 Cards
+// 206 Cards
 | 'PIRATE'
-// 109 Cards
+// 111 Cards
 | 'QUILBOAR'
-// 96 Cards
+// 97 Cards
 | 'HUMAN'
 // 94 Cards
 | 'ORC'
@@ -410,9 +412,9 @@ export type Race =
 | 'TOTEM'
 // 58 Cards
 | 'OLDGOD'
-// 52 Cards
+// 56 Cards
 | 'ALL'
-// 36 Cards
+// 37 Cards
 | 'NIGHTELF'
 // 32 Cards
 | 'TAUREN'
