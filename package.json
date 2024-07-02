@@ -1,6 +1,6 @@
 {
   "name": "@hearthstonejs/vanillatypes",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "description": "Hearthstone Card Types",
   "exports": "./types.ts",
   "type": "module",
