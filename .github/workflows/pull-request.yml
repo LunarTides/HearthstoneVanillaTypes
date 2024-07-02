@@ -18,6 +18,8 @@ jobs:
 
       - run: git commit -am "[GHA] Update `types.ts`"
       - run: npm version minor
+
+      - run: git push -f
       
       - name: Create PR
         run: gh pr create --label automated --draft --title "Update $(date +'%d/%m/%y')" --body "" > pr-number.txt
