@@ -1,30 +1,30 @@
-// Last Updated: 02/07/2024 (DD/MM/YYYY)
+// Last Updated: 29/07/2024 (DD/MM/YYYY)
 // Tested with: https://hearthstonejson.com
 
 export type CardClass =
-// 13446 Cards
+// 13559 Cards
 | 'NEUTRAL'
-// 1332 Cards
+// 1351 Cards
 | 'DRUID'
-// 1220 Cards
+// 1241 Cards
 | 'WARRIOR'
-// 1159 Cards
+// 1181 Cards
 | 'MAGE'
-// 1156 Cards
+// 1181 Cards
 | 'PALADIN'
-// 1152 Cards
+// 1175 Cards
 | 'WARLOCK'
-// 1141 Cards
+// 1157 Cards
 | 'HUNTER'
-// 1128 Cards
+// 1142 Cards
 | 'ROGUE'
-// 1050 Cards
+// 1088 Cards
 | 'SHAMAN'
-// 991 Cards
+// 1011 Cards
 | 'PRIEST'
-// 659 Cards
+// 677 Cards
 | 'DEMONHUNTER'
-// 488 Cards
+// 505 Cards
 | 'DEATHKNIGHT'
 // 11 Cards
 | 'DREAM'
@@ -46,7 +46,7 @@ export type Set =
 | 'DALARAN'
 // 808 Cards
 | 'ULDUM'
-// 677 Cards
+// 701 Cards
 | 'HERO_SKINS'
 // 667 Cards
 | 'ALTERAC_VALLEY'
@@ -76,16 +76,18 @@ export type Set =
 | 'BLACK_TEMPLE'
 // 396 Cards
 | 'REVENDRETH'
-// 374 Cards
+// 375 Cards
 | 'CORE'
 // 371 Cards
 | 'WHIZBANGS_WORKSHOP'
 // 348 Cards
 | 'LEGACY'
+// 348 Cards
+| 'WILD_WEST'
 // 347 Cards
 | 'BATTLE_OF_THE_BANDS'
-// 347 Cards
-| 'WILD_WEST'
+// 323 Cards
+| 'ISLAND_VACATION'
 // 318 Cards
 | 'ICECROWN'
 // 284 Cards
@@ -126,27 +128,25 @@ export type Set =
 | 'TAVERNS_OF_TIME'
 // 40 Cards
 | 'DEMON_HUNTER_INITIATE'
-// 34 Cards
+// 36 Cards
 | 'BASIC'
 // 21 Cards
-| 'EVENT'
-// 5 Cards
-| 'ISLAND_VACATION';
+| 'EVENT';
 
 export type Type =
-// 9285 Cards
+// 9419 Cards
 | 'MINION'
-// 5648 Cards
-| 'ENCHANTMENT'
-// 5603 Cards
+// 5711 Cards
 | 'SPELL'
+// 5711 Cards
+| 'ENCHANTMENT'
 // 4438 Cards
 | 'LETTUCE_ABILITY'
-// 2433 Cards
+// 2452 Cards
 | 'HERO'
-// 1854 Cards
+// 1860 Cards
 | 'HERO_POWER'
-// 428 Cards
+// 437 Cards
 | 'WEAPON'
 // 74 Cards
 | 'BATTLEGROUND_ANOMALY'
@@ -154,7 +154,7 @@ export type Type =
 | 'BATTLEGROUND_QUEST_REWARD'
 // 60 Cards
 | 'BATTLEGROUND_SPELL'
-// 45 Cards
+// 52 Cards
 | 'LOCATION'
 // 9 Cards
 | 'GAME_MODE_BUTTON'
@@ -164,37 +164,37 @@ export type Type =
 | 'BATTLEGROUND_HERO_BUDDY';
 
 export type Rarity =
-// 2961 Cards
+// 3021 Cards
 | 'COMMON'
-// 2323 Cards
+// 2367 Cards
 | 'RARE'
-// 1654 Cards
+// 1681 Cards
 | 'LEGENDARY'
-// 1483 Cards
+// 1514 Cards
 | 'EPIC'
-// 1146 Cards
+// 1168 Cards
 | 'FREE';
 
 export type Faction =
-// 255 Cards
+// 257 Cards
 | 'ALLIANCE'
-// 152 Cards
+// 153 Cards
 | 'HORDE';
 
 export type SpellSchool =
-// 735 Cards
+// 748 Cards
 | 'SHADOW'
-// 703 Cards
+// 707 Cards
 | 'NATURE'
-// 412 Cards
+// 421 Cards
 | 'FIRE'
-// 379 Cards
+// 385 Cards
 | 'HOLY'
-// 335 Cards
+// 342 Cards
 | 'ARCANE'
-// 282 Cards
+// 290 Cards
 | 'FROST'
-// 242 Cards
+// 247 Cards
 | 'FEL'
 // 60 Cards
 | 'TAVERN'
@@ -204,29 +204,29 @@ export type SpellSchool =
 | 'PHYSICAL_COMBAT';
 
 export type Mechanics =
-// 2895 Cards
+// 2926 Cards
 | 'TRIGGER_VISUAL'
-// 2494 Cards
+// 2566 Cards
 | 'BATTLECRY'
-// 1111 Cards
+// 1128 Cards
 | 'DEATHRATTLE'
-// 943 Cards
+// 960 Cards
 | 'TAUNT'
-// 444 Cards
-| 'AURA'
-// 442 Cards
+// 453 Cards
 | 'DISCOVER'
-// 434 Cards
+// 450 Cards
+| 'AURA'
+// 440 Cards
 | 'RUSH'
-// 399 Cards
+// 404 Cards
 | 'ENCHANTMENT_INVISIBLE'
-// 359 Cards
+// 364 Cards
 | 'TAG_ONE_TURN_EFFECT'
 // 228 Cards
 | 'DUNGEON_PASSIVE_BUFF'
 // 203 Cards
 | 'AI_MUST_PLAY'
-// 184 Cards
+// 188 Cards
 | 'LIFESTEAL'
 // 180 Cards
 | 'DIVINE_SHIELD'
@@ -234,19 +234,19 @@ export type Mechanics =
 | 'CHOOSE_ONE'
 // 139 Cards
 | 'SECRET'
-// 134 Cards
+// 137 Cards
 | 'AFFECTED_BY_SPELL_POWER'
+// 134 Cards
+| 'ImmuneToSpellpower'
 // 129 Cards
 | 'STEALTH'
-// 129 Cards
-| 'ImmuneToSpellpower'
 // 119 Cards
 | 'UNTOUCHABLE'
 // 110 Cards
 | 'MAGNETIC'
-// 105 Cards
+// 106 Cards
 | 'COMBO'
-// 103 Cards
+// 104 Cards
 | 'CHARGE'
 // 97 Cards
 | 'CANT_BE_SILENCED'
@@ -254,33 +254,33 @@ export type Mechanics =
 | 'SPELLPOWER'
 // 96 Cards
 | 'WINDFURY'
-// 90 Cards
+// 91 Cards
 | 'POISONOUS'
 // 87 Cards
 | 'OVERLOAD'
-// 85 Cards
+// 86 Cards
 | 'REBORN'
 // 62 Cards
 | 'InvisibleDeathrattle'
-// 60 Cards
+// 62 Cards
 | 'FREEZE'
 // 58 Cards
 | 'AVENGE'
 // 58 Cards
 | 'START_OF_GAME_KEYWORD'
-// 55 Cards
+// 56 Cards
 | 'CANT_ATTACK'
+// 46 Cards
+| 'OUTCAST'
 // 46 Cards
 | 'QUEST'
 // 46 Cards
 | 'SPELLBURST'
+// 46 Cards
+| 'TRADEABLE'
 // 45 Cards
 | 'TWINSPELL'
-// 45 Cards
-| 'OUTCAST'
-// 44 Cards
-| 'TRADEABLE'
-// 41 Cards
+// 42 Cards
 | 'ELUSIVE'
 // 36 Cards
 | 'CORRUPT'
@@ -307,25 +307,25 @@ export type Mechanics =
 // 20 Cards
 | 'VENOMOUS'
 // 19 Cards
+| 'SILENCE'
+// 19 Cards
 | 'MINIATURIZE'
 // 17 Cards
 | 'ADJACENT_BUFF'
 // 17 Cards
 | 'EXCAVATE'
-// 17 Cards
-| 'SILENCE'
 // 16 Cards
 | 'QUICKDRAW'
 // 15 Cards
 | 'COLOSSAL'
+// 14 Cards
+| 'SIDE_QUEST'
 // 14 Cards
 | 'PUZZLE'
 // 14 Cards
 | 'APPEAR_FUNCTIONALLY_DEAD'
 // 14 Cards
 | 'EVIL_GLOW'
-// 13 Cards
-| 'SIDE_QUEST'
 // 12 Cards
 | 'TITAN'
 // 11 Cards
@@ -384,53 +384,53 @@ export type Mechanics =
 | 'COUNTER';
 
 export type Race =
-// 1083 Cards
+// 1099 Cards
 | 'BEAST'
-// 747 Cards
+// 758 Cards
 | 'UNDEAD'
-// 540 Cards
+// 551 Cards
 | 'ELEMENTAL'
-// 505 Cards
+// 513 Cards
 | 'DEMON'
-// 503 Cards
+// 505 Cards
 | 'MECHANICAL'
-// 489 Cards
+// 493 Cards
 | 'DRAGON'
-// 284 Cards
+// 288 Cards
 | 'MURLOC'
-// 224 Cards
+// 249 Cards
 | 'NAGA'
-// 206 Cards
+// 226 Cards
 | 'PIRATE'
 // 111 Cards
 | 'QUILBOAR'
-// 97 Cards
+// 102 Cards
 | 'HUMAN'
 // 94 Cards
 | 'ORC'
 // 62 Cards
 | 'TOTEM'
-// 58 Cards
+// 59 Cards
 | 'OLDGOD'
-// 56 Cards
+// 57 Cards
 | 'ALL'
 // 37 Cards
 | 'NIGHTELF'
-// 32 Cards
-| 'TAUREN'
-// 31 Cards
+// 33 Cards
 | 'TROLL'
+// 33 Cards
+| 'TAUREN'
 // 30 Cards
 | 'DWARF'
-// 22 Cards
+// 23 Cards
 | 'GNOME'
-// 21 Cards
+// 22 Cards
 | 'WORGEN'
 // 19 Cards
 | 'DRAENEI'
 // 18 Cards
 | 'OGRE'
-// 14 Cards
+// 16 Cards
 | 'BLOODELF'
 // 9 Cards
 | 'FURBOLG'
