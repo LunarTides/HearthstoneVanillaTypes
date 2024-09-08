@@ -1,63 +1,12 @@
 import { Buffer } from "node:buffer";
+import fs from "node:fs";
 import https from "node:https";
-import process from "node:process";
 import date from "date-and-time";
-import _ from "lodash";
 import type { Card } from "../types.js";
 
-function get(
-	url: string,
-	resolve: (value: unknown) => void,
-	reject: (reason: unknown) => void,
-): void {
-	https.get(url, (response) => {
-		// If any other status codes are returned, those needed to be added here
-		if (response.statusCode === 301 || response.statusCode === 302) {
-			if (!response.headers.location) {
-				throw new Error(
-					"No redirect found. Something must be wrong with the api?",
-				);
-			}
+const API_URL = "https://api.hearthstonejson.com/v1/latest/enUS/cards.json";
 
-			get(response.headers.location, resolve, reject);
-			return;
-		}
-
-		const body: Uint8Array[] = [];
-
-		response.on("data", (chunk) => {
-			body.push(chunk);
-		});
-
-		response.on("end", () => {
-			try {
-				// Remove JSON.parse(...) for plain data
-				resolve(JSON.parse(Buffer.concat(body).toString()));
-			} catch (error) {
-				reject(error);
-			}
-		});
-	});
-}
-
-async function getData(url: string): Promise<unknown> {
-	return new Promise((resolve, reject) => {
-		get(url, resolve, reject);
-	});
-}
-
-async function getCards(): Promise<Card[]> {
-	return await getData(
-		"https://api.hearthstonejson.com/v1/latest/enUS/cards.json",
-	).then((r) => {
-		return r as Card[];
-	});
-}
-
-const props: Record<string, [string, number]> = {};
-const stored: Record<string, Array<[unknown, number]>> = {};
-
-const whitelistedProps = new Set<keyof Card>([
+const relevantCardProps = [
 	"cardClass",
 	"set",
 	"type",
@@ -67,92 +16,72 @@ const whitelistedProps = new Set<keyof Card>([
 	"mechanics",
 	"race",
 	"multiClassGroup",
-]);
+];
 
-/**
- * Does something(?) to the key and value and applies it to `stored`.
- */
-function handleStoredTypes(key: keyof Card, value: unknown): void {
-	if (!whitelistedProps.has(key)) {
-		return;
-	}
-
-	const values = Array.isArray(value) ? value : [value];
-
-	for (const value of values) {
-		if (!stored[key]) {
-			stored[key] = [[value, 1]];
-			continue;
-		}
-
-		const found = stored[key].find((s) => _.isEqual(s[0], value));
-		if (found) {
-			found[1]++;
-		} else {
-			stored[key].push([value, 1]);
-		}
-	}
+// Helper function to capitalize the first letter of a string
+function capitalize(str: string): string {
+	return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-async function main(): Promise<void> {
-	const cards = await getCards();
-
-	for (const [index, card] of cards.entries()) {
-		if (!process.stdout.isTTY && index % 100 === 0) {
-			process.stderr.write(
-				`\r\u001B[KProcessing ${index / 100 + 1} / ${Math.ceil(cards.length / 100)}...`,
-			);
-		}
-
-		for (const entry of Object.entries(card)) {
-			const [key, value] = entry;
-
-			handleStoredTypes(key as keyof Card, value);
-
-			if (Object.keys(props).includes(key)) {
-				const storedType = props[key][0];
-				if (storedType !== (typeof value).toString()) {
-					console.warn(
-						"<yellow>Discrepancy found. Stored type: %s, Found type %s.</yellow>",
-						storedType,
-						typeof value,
-					);
+// Function to fetch data from the API
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+function fetchData(url: string): Promise<any> {
+	return new Promise((resolve, reject) => {
+		https
+			.get(url, (response) => {
+				// Follow redirects
+				if ([301, 302].includes(response.statusCode)) {
+					return resolve(fetchData(response.headers.location));
 				}
 
-				props[key][1]++;
-				continue;
-			}
+				const chunks: Uint8Array[] = [];
 
-			props[key] = [typeof value, 1];
-		}
-	}
+				response.on("data", (chunk) => chunks.push(chunk));
+				response.on("end", () =>
+					resolve(JSON.parse(Buffer.concat(chunks).toString())),
+				);
+			})
+			.on("error", reject);
+	});
+}
 
-	const now = new Date();
-	const dateString = date.format(now, "DD/MM/YYYY");
+// Function to process card data and generate type definitions
+async function main(): Promise<void> {
+	const cards = (await fetchData(API_URL)) as Card[];
+	const cardStats: Record<string, Record<string, number>> = {};
 
-	console.log(`// Last Updated: ${dateString} (DD/MM/YYYY)`);
-	console.log("// Tested with: https://hearthstonejson.com");
-
-	for (const object of Object.entries(stored)) {
-		let [key, value] = object;
-		value = value.sort((a, b) => b[1] - a[1]);
-
-		console.log(
-			"\nexport type %s =",
-			key.slice(0, 1).toUpperCase() + key.slice(1),
-		);
-		for (let i = 0; i < value.length; i++) {
-			const v = value[i];
-
-			if (i >= value.length - 1) {
-				console.log(`// ${v[1]} Cards\n| '${v[0]}';`);
-			} else {
-				console.log(`// ${v[1]} Cards\n| '${v[0]}'`);
+	// Count occurrences of relevant properties
+	for (const card of cards) {
+		for (const prop of relevantCardProps) {
+			const value = card[prop];
+			if (value) {
+				const values = Array.isArray(value) ? value : [value];
+				for (const v of values) {
+					cardStats[prop] ??= {};
+					cardStats[prop][v] = (cardStats[prop][v] || 0) + 1;
+				}
 			}
 		}
 	}
 
-	console.log(`
+	// Generate type definitions based on occurrences
+	let output = `// Last Updated: ${date.format(new Date(), "DD/MM/YYYY")} (DD/MM/YYYY)\n`;
+	output += "// Tested with: https://hearthstonejson.com\n";
+
+	for (const [prop, values] of Object.entries(cardStats)) {
+		// Sort values based on occurrences.
+		// This puts props with more occurrences further up.
+		const sortedValues = Object.entries(values).sort((a, b) => b[1] - a[1]);
+
+		output += `\nexport type ${capitalize(prop)} =`;
+		for (const [value, count] of sortedValues) {
+			output += `\n// ${count} Cards\n| '${value}'`;
+		}
+		output += ";\n";
+	}
+
+	// TODO: Automate the creation of this object.
+	output += `
 /**
  * Hearthstone's card blueprint.
  */
@@ -198,10 +127,10 @@ export type Card = {
     multiClassGroup?: MultiClassGroup;
     // Is mini set is either set to true, or not set at all.
     isMiniSet?: boolean;
-    // This seems like it is the id (not dbfId) of the reward card.
+    // This seems like this is the id (not dbfId) of the reward card.
     questReward?: string;
 
-    // Likely part of other gamemodes.
+    // All props below this line is likely part of other gamemodes.
     mercenariesRole?: string;
     mercenariesAbilityCooldown?: number;
     techLevel?: number;
@@ -222,7 +151,11 @@ export type Card = {
     battlegroundsDarkmoonPrizeTurn?: number;
     countAsCopyOfDbfId?: number;
     puzzleType?: number;
-};`);
+};\n`;
+
+	// Save the generated types to a file
+	await fs.promises.writeFile("../types.ts", output, "utf8");
 }
 
-await main();
+// Run the main function
+main().catch(console.error);

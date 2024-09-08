@@ -1,3 +1,3 @@
 @echo off
 cd generator
-bun install && bun run . > ../types.ts
+bun install && bun .

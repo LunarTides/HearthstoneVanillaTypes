@@ -560,10 +560,10 @@ export type Card = {
     multiClassGroup?: MultiClassGroup;
     // Is mini set is either set to true, or not set at all.
     isMiniSet?: boolean;
-    // This seems like it is the id (not dbfId) of the reward card.
+    // This seems like this is the id (not dbfId) of the reward card.
     questReward?: string;
 
-    // Likely part of other gamemodes.
+    // All props below this line is likely part of other gamemodes.
     mercenariesRole?: string;
     mercenariesAbilityCooldown?: number;
     techLevel?: number;
